@@ -1,0 +1,34 @@
+<!-- 📁 src/app/shared/components/menu/menu.component.html -->
+
+<nav class="flex flex-col gap-2 text-sm">
+  @for (item of menu(); track item.label) {
+    
+    @if (item.route) {
+      <a [routerLink]="item.route"
+         class="flex items-center gap-2 p-2 rounded hover:bg-gray-100 text-gray-700">
+        @if (item.icon) {
+          <i [class]="item.icon"></i>
+        }
+        {{ item.label }}
+      </a>
+    }
+
+    @if (item.children) {
+      <div class="font-semibold text-gray-500 mt-2 mb-1 flex items-center gap-2">
+        @if (item.icon) {
+          <i [class]="item.icon"></i>
+        }
+        {{ item.label }}
+      </div>
+      <div class="ml-4 space-y-1">
+        @for (sub of item.children; track sub.label) {
+          <a [routerLink]="sub.route"
+             class="block p-1 text-gray-600 hover:text-gray-800 hover:underline">
+            {{ sub.label }}
+          </a>
+        }
+      </div>
+    }
+
+  }
+</nav>

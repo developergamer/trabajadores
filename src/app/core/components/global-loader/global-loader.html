@@ -1,0 +1,9 @@
+<p>global-loader works!</p>
+@if (loader.isLoading()) {
+  <div class="fixed inset-0 bg-white/80 backdrop-blur-sm flex items-center justify-center z-9999">
+    <div class="flex flex-col items-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-4 border-blue-400 border-t-transparent"></div>
+      <p class="mt-3 text-blue-700 font-medium">Cargando...</p>
+    </div>
+  </div>
+}

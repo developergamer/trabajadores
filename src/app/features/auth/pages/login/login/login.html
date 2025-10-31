@@ -1,0 +1,34 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-50">
+  <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm">
+    <h1 class="text-2xl font-bold mb-4 text-center">Iniciar sesión</h1>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+        <input formControlName="email" type="email"
+               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Contraseña</label>
+        <input formControlName="password" type="password"
+               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+      </div>
+
+      @if (error) {
+        <p class="text-red-600 text-sm">{{ error }}</p>
+      }
+
+      <button type="submit" [disabled]="cargando"
+              class="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
+        {{ cargando ? 'Ingresando...' : 'Entrar' }}
+      </button>
+    </form>
+
+    <div class="text-center mt-4">
+      <a routerLink="/forgot-password" class="text-blue-600 hover:underline text-sm">
+        ¿Olvidaste tu contraseña?
+      </a>
+    </div>
+  </div>
+</div>
