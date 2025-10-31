@@ -1,3 +1,4 @@
+# Gitignore file for a generic JavaScript/TypeScript project 
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
@@ -41,3 +42,6 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Angular environments (do NOT upload credentials)
+src/environments/*.ts
